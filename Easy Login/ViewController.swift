@@ -13,10 +13,17 @@ class ViewController: UIViewController {
     var userString: String = ""
     var passwordString: String = ""
     var resultString = ""
+    var factorInt: Int = 1
+    let constant = 9
+    var answerInt = 0
+    var answerString = ""
+    var crossString = "X"
+    var turnLine = "\n"
     
     let officeDict = ["user1":"1111","user2":"2222","user3": "3333"]
     let dialogString = ["","User False","Password False", "Welcome"]
 //    Explicit
+    @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var showLabel: UILabel!
     @IBOutlet weak var userTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -32,6 +39,14 @@ class ViewController: UIViewController {
         if(resultString == passwordString){
 //            Auther True
             showLabel.text = dialogString[3]
+            while(factorInt <= 12){
+                answerInt = constant * factorInt
+                answerString = String(constant) + crossString + String(factorInt) + "=" + String(answerInt) + turnLine
+                
+                print("answerString ==> \(answerString)")
+                factorInt += 1
+            }
+            answerLabel.text = answerString
         }else{
 //            password false
             showLabel.text = dialogString[2]
