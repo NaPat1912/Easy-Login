@@ -34,7 +34,13 @@ class ViewController: UIViewController {
         
         print("User ==> \(userString)")
         print("Password ==> \(passwordTextField)")
-        resultString = officeDict[userString]!
+        
+        if let testUser = officeDict[userString]{
+            resultString = testUser
+        }else{
+            showLabel.text = dialogString[1]
+        }
+        
         print("result ==> \(resultString)")
         if(resultString == passwordString){
 //            Auther True
