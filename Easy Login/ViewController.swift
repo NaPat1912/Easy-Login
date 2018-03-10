@@ -10,6 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+//    Explicit
+    @IBOutlet weak var showLabel: UILabel!
+    @IBOutlet weak var userTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBAction func loginButton(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
